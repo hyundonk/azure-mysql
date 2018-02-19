@@ -2,13 +2,13 @@
 ## Creating Azure MySQL Database using Azure CLI
 
     $ az group create --name myresourcegroup --location westus
-    $ az mysql server create --resource-group myresourcegroup --name hyukserver4demo --location westus --admin-user myadmin --admin-password Passw0rd! --performance-tier Standard --compute-units 100
-    $ az mysql server update --resource-group myresourcegroup --name hyukserver4demo --ssl-enforcement Disabled
-    $ az mysql server firewall-rule create --resource-group myresourcegroup --server hyukserver4demo --name AllowYourIP --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
-    $ az mysql server show --resource-group myresourcegroup --name hyukserver4demo
+    $ az mysql server create --resource-group myresourcegroup --name myserver4demo --location westus --admin-user myadmin --admin-password Passw0rd! --performance-tier Standard --compute-units 100
+    $ az mysql server update --resource-group myresourcegroup --name myserver4demo --ssl-enforcement Disabled
+    $ az mysql server firewall-rule create --resource-group myresourcegroup --server myserver4demo --name AllowYourIP --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
+    $ az mysql server show --resource-group myresourcegroup --name myserver4demo
 
 
-    $ mysql -h hyukserver4demo.mysql.database.azure.com -u myadmin@hyukserver4demo -p
+    $ mysql -h myserver4demo.mysql.database.azure.com -u myadmin@myserver4demo -p
     Enter password:
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 65362
@@ -25,14 +25,14 @@
     
     Connection id:          65362
     Current database:
-    Current user:           myadmin@221.167.207.246
+    Current user:           myadmin@xxx.xxx.xxx.xxx
     SSL:                    Cipher in use is AES256-SHA
     Current pager:          stdout
     Using outfile:          ''
     Using delimiter:        ;
     Server version:         5.6.26.0 MySQL Community Server (GPL)
     Protocol version:       10
-    Connection:             hyukserver4demo.mysql.database.azure.com via TCP/IP
+    Connection:             myserver4demo.mysql.database.azure.com via TCP/IP
     Server characterset:    latin1
     Db     characterset:    latin1
     Client characterset:    utf8
