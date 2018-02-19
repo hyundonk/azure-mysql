@@ -2,7 +2,7 @@
 ## Creating Azure MySQL Database using Azure CLI
 
     $ az group create --name myresourcegroup --location westus
-    $ az mysql server create --resource-group myresourcegroup --name hyukserver4demo --location westus --admin-user myadmin --admin-password Djfudnsdkagh1! --performance-tier Standard --compute-units 100
+    $ az mysql server create --resource-group myresourcegroup --name hyukserver4demo --location westus --admin-user myadmin --admin-password Passw0rd! --performance-tier Standard --compute-units 100
     $ az mysql server update --resource-group myresourcegroup --name hyukserver4demo --ssl-enforcement Disabled
     $ az mysql server firewall-rule create --resource-group myresourcegroup --server hyukserver4demo --name AllowYourIP --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
     $ az mysql server show --resource-group myresourcegroup --name hyukserver4demo
