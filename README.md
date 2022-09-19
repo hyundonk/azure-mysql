@@ -62,3 +62,19 @@
     
 
 
+## Getting Location Based SQL Capabilities
+
+https://learn.microsoft.com/en-us/rest/api/mysql/flexibleserver/location-based-capabilities
+
+```
+# Get Token
+curl -X POST -H 'Content-Type: application/x-www-form-urlencoded'     https://login.microsoftonline.com/$ARM_TENANT_ID/oauth2/token     -d "client_id=${ARM_CLIENT_ID}"     -d "grant_type=client_credentials"     -d "resource=https%3A%2F%2Fmanagement.azure.com%2F"     -d "client_secret=${ARM_CLIENT_SECRET}"
+
+export TF_VAR_aad_token="eyJ0eXAi...Dv3k4cFxlAG-AEw2cg"
+
+
+# Call API
+curl -X GET -H "Authorization: Bearer $TF_VAR_aad_token" -H "Content-Type: application/json" "https://management.azure.com/subscriptions/${ARM_SUBSCRIPTION_ID}/providers/Microsoft.DBforMySQL/locations/southeastasia/capabilities?api-version=2021-05-01"
+
+```
+
